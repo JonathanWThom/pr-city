@@ -12,6 +12,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'decent_exposure', '3.0.0'
 gem 'safe_attributes'
+gem "audited", "~> 4.3"
+gem "rails-observers", github: 'rails/rails-observers'
+
 
 group :development, :test do
   gem 'byebug', platform: :mri
