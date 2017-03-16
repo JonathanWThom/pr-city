@@ -57,8 +57,8 @@
         null,
         null,
         1,
-        8,
-        8,
+        9,
+        9,
         null,
         null,
         null,
@@ -587,6 +587,10 @@
         null,
         1,
         1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "/Users/JonathanThom/Desktop/pr-city/app/models/application_record.rb": [
@@ -597,6 +601,10 @@
       "/Users/JonathanThom/Desktop/pr-city/app/controllers/application_controller.rb": [
         1,
         1,
+        null,
+        1,
+        0,
+        null,
         null
       ],
       "/Users/JonathanThom/Desktop/pr-city/app/helpers/application_helper.rb": [
@@ -619,6 +627,10 @@
         null,
         null
       ],
+      "/Users/JonathanThom/Desktop/pr-city/app/controllers/exercises_controller.rb": [
+        1,
+        null
+      ],
       "/Users/JonathanThom/Desktop/pr-city/app/controllers/home_controller.rb": [
         1,
         1,
@@ -639,6 +651,14 @@
         null,
         null
       ],
+      "/Users/JonathanThom/Desktop/pr-city/app/controllers/users_controller.rb": [
+        1,
+        1,
+        1,
+        0,
+        null,
+        null
+      ],
       "/Users/JonathanThom/Desktop/pr-city/app/jobs/application_job.rb": [
         1,
         null
@@ -650,6 +670,7 @@
         null
       ],
       "/Users/JonathanThom/Desktop/pr-city/app/models/exercise.rb": [
+        1,
         1,
         1,
         1,
@@ -673,7 +694,7 @@
         1,
         null,
         1,
-        46,
+        59,
         null,
         null,
         null,
@@ -716,9 +737,16 @@
         2,
         2,
         2,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ]
     },
-    "timestamp": 1489680220
+    "timestamp": 1489692818
   }
 }
