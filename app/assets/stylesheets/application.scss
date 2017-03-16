@@ -11,3 +11,12 @@
 @import "footer";
 @import "helpers";
 @import "animations";
+@import "home";
+
+html {
+  background: image-url('city1.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,21 +1,22 @@
 //change variables below to customize the tuxedo framework
 
 //colors
-$dark: #262525;
-$dark-grey: #5c5c5c;
-$md-grey: #c8c8c8;
-$light: #f4f4f4;
-$color-pop: #2A7F62; 
+$dark: #262B2C;
+$dark-grey: #3F5356;
+$md-grey: #96AAA6;
+$light: #F2F9F9;
+$color-pop: #E74443;
 
 //fonts - to update, import a new font below
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100i,300,700,700i|Lato:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300i,400,700|Raleway:300,400');
 
 //Define font family for header and body font. Must already be imported above
-$header-font: 'Josefin Sans', sans-serif;
-$body-font: 'Lato', sans-serif;
+$header-font: 'Montserrat', sans-serif;
+$body-font: 'Raleway', sans-serif;
 
 %body-font {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: lighter;
   letter-spacing: .5px;
 }
+    
