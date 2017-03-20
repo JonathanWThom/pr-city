@@ -3,6 +3,22 @@
 </div>
 
 <div class="row">
+  <div class="col-6">
+    <%= form_for [@user, @exercise] do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.' %>
+      <%= f.label :record %>
+      <%= f.number_field :record, placeholder: 'How much, how fast, how many?' %>
+      <!-- change below to a select field -->
+      <!-- would be cool to select type and then have input field change!! -->
+      <%= f.label :type %>
+      <%= f.text_field :type, placeholder: 'Pounds, Kilos, Time (in seconds), Reps, etc.' %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+  <div class="col-6">
+
+  </div>
   <!--column for prs -->
   <!--column for new -->
   <!--search and history functions-->
