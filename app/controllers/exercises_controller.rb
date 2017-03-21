@@ -17,6 +17,7 @@ class ExercisesController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     @exercise = Exercise.find(params[:id])
+    @revisions = @exercise.revisions_in_order
   end
 
   def update

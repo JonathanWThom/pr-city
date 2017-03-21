@@ -19,7 +19,7 @@
     </div>
     <div class="col-6">
       <h4 class="text-center">History</h4>
-      <% @exercise.revisions.each do |revision| %>
+      <% @revisions.each do |revision| %>
         <p><%= revision.record %> <%= revision.unit %> | <%= revision.date %></p>
       <% end %>
     </div>
