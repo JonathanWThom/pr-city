@@ -14,9 +14,22 @@ class ExercisesController < ApplicationController
     end
   end
 
-  def edit
-    @user = User.find(params[:used_id])
+  def show
+    @user = User.find(params[:user_id])
     @exercise = Exercise.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @exercise = Exercise.find(params[:id])
+    if @exercise.update(exercise_params)
+      flash[:notice] = "PR Updated"
+      redirect_to user_exercise_path(@user, @exercise)
+    else
+      flash[:notice] = "Something went wrong"
+      ## render errors instead
+      redirect_to user_exercise_path(@user, @exercise)
+    end
   end
 
   private

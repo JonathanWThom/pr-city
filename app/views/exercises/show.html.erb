@@ -1,0 +1,23 @@
+<div class="container">
+  <h3 class="text-center"><%= @exercise.name %></h3>
+
+  <div class="row">
+    <div class="col-6">
+      <h4 class="text-center">Update</h4>
+      <%= form_for [@user, @exercise] do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+        <%= f.label :record %>
+        <%= f.number_field :record %>
+        <%= f.label :unit %>
+        <%= f.text_field :unit %>
+        <%= f.label :date %>
+        <%= f.date_field :date %>
+        <%= f.submit %>
+      <% end %>
+    </div>
+    <div class="col-6">
+      <h4 class="text-center">History</h4>
+    </div>
+  </div>
+</div>
