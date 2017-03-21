@@ -17,8 +17,16 @@
         <%= f.submit %>
       <% end %>
     </div>
-    <div class="col-6">
 
+    <div class="col-6">
+      <% if @exercises.any? %>
+        <div class="records">
+          <% @exercises.each do |exercise| %>
+            <p><%= exercise.name %> | <%= exercise.record %> <%= exercise.unit %> | <%= exercise.date %> <%= link_to 'Update', edit_user_exercise_path(@user, exercise) %></p>
+          <!--why are there trailing || ? -->
+          <% end %>
+        </div>
+      <% end %>
     </div>
     <!--column for prs -->
     <!--column for new -->

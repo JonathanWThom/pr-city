@@ -3,7 +3,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @exercise = @user.exercises.new
+    @exercises = @user.exercises
+    @exercise = Exercise.new(user_id: @user.id)
+
+    ##it is getting this new exercise mixed up with @exercises, I think
   end
 
 end

@@ -14,6 +14,11 @@ class ExercisesController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:used_id])
+    @exercise = Exercise.find(params[:id])
+  end
+
   private
   def exercise_params
     params.require(:exercise).permit(:name, :record, :unit, :date)
