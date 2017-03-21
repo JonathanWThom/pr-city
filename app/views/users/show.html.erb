@@ -1,33 +1,37 @@
 <div class="container">
-  <h2 class="text-center"><%= @user.name %></h2>
-
+  <h1 class="text-center name"><%= @user.name %></h1>
+</div>
+<div class="container">
   <div class="row">
     <div class="col-6">
       <%= form_for [@user, @exercise] do |f| %>
+        <h2 class="text-center">Add a New PR</h2>
         <%= f.label :name %>
-        <%= f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.' %>
+        <%= f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.', class: 'input-light' %>
         <%= f.label :record %>
-        <%= f.number_field :record, placeholder: 'How much, how fast, how many?' %>
+        <%= f.number_field :record, placeholder: 'How much, how fast, how many?', class: 'input-light' %>
+        <%= f.label :unit %>
         <%= f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps']) %>
         <%= f.label :date %>
-        <%= f.date_field :date %>
-        <%= f.submit %>
+        <%= f.date_field :date, class: 'input-light' %>
+        <%= f.submit 'PR City!', class: "btn-dark" %>
       <% end %>
     </div>
 
     <div class="col-6">
       <% if @exercises.any? %>
-        <div class="records">
-          <% @exercises.each do |exercise| %>
-            <p><%= exercise.name %> |
-                <% if exercise.unit == "Time (seconds)" %>
-                  <%= exercise.convert_time %>
-                <% else %>
-                  <%= exercise.record %> <%= exercise.unit %>
-                <% end %>
-               | <%= exercise.date %> <%= link_to 'Update & View History', user_exercise_path(@user, exercise) %></p>
-          <!--why are there trailing || ? -->
-          <% end %>
+        <div class="exercise-list">
+          <div class="records">
+            <% @exercises.each do |exercise| %>
+              <p><%= exercise.name %> |
+                  <% if exercise.unit == "Time (seconds)" %>
+                    <%= exercise.convert_time %>
+                  <% else %>
+                    <%= exercise.record %> <%= exercise.unit %>
+                  <% end %>
+                 | <%= exercise.date %> <%= link_to 'Update & View History', user_exercise_path(@user, exercise) %></p>
+            <% end %>
+          </div>
         </div>
       <% end %>
     </div>

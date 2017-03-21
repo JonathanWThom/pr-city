@@ -37,7 +37,7 @@ label {     // For labels used with selects/inputs/textareas
 input, textarea, select { // Base styling for inputs/textareas/selects
   display: block;
   margin: 5px 0 30px 0;
-  width: 50%;
+  width: 100%;
   font-size: 1rem;
   font-family: $header-font;
   &:focus {
