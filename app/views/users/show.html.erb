@@ -8,9 +8,6 @@
         <%= f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.' %>
         <%= f.label :record %>
         <%= f.number_field :record, placeholder: 'How much, how fast, how many?' %>
-        <!-- <%= f.label :unit %>
-        <%= f.text_field :unit, placeholder: 'Pounds, Kilos, Time (in seconds), Reps, etc.' %> -->
-
         <%= f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps']) %>
         <%= f.label :date %>
         <%= f.date_field :date %>
@@ -22,7 +19,13 @@
       <% if @exercises.any? %>
         <div class="records">
           <% @exercises.each do |exercise| %>
-            <p><%= exercise.name %> | <%= exercise.record %> <%= exercise.unit %> | <%= exercise.date %> <%= link_to 'Update & View History', user_exercise_path(@user, exercise) %></p>
+            <p><%= exercise.name %> |
+                <% if exercise.unit == "Time (seconds)" %>
+                  <%= exercise.convert_time %>
+                <% else %>
+                  <%= exercise.record %> <%= exercise.unit %>
+                <% end %>
+               | <%= exercise.date %> <%= link_to 'Update & View History', user_exercise_path(@user, exercise) %></p>
           <!--why are there trailing || ? -->
           <% end %>
         </div>
