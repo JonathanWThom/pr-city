@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   resources :users do
     resources :exercises
   end
+  
   root to: "home#index"
 end
