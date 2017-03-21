@@ -14,24 +14,31 @@
         <%= f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps']) %>
         <%= f.label :date %>
         <%= f.date_field :date, class: 'input-light' %>
-        <%= f.submit 'PR City!', class: "btn-dark" %>
+        <%= f.button 'PR City!', class: "btn-dark" %>
       <% end %>
     </div>
 
     <div class="col-6">
       <% if @exercises.any? %>
         <div class="exercise-list">
-          <div class="records">
+          <h2 class="text-center">Your PRs</h2>
+          <table style="width:100%">
+            <tr>
+              <th>Exercise</th>
+              <th>Record</th>
+              <th>Date</th>
+            </tr>
             <% @exercises.each do |exercise| %>
-              <p><%= exercise.name %> |
-                  <% if exercise.unit == "Time (seconds)" %>
-                    <%= exercise.convert_time %>
-                  <% else %>
-                    <%= exercise.record %> <%= exercise.unit %>
-                  <% end %>
-                 | <%= exercise.date %> <%= link_to 'Update & View History', user_exercise_path(@user, exercise) %></p>
+              <tr class="text-center">
+                <td><%= link_to exercise.name, user_exercise_path(@user, exercise) %></td>
+                <% if exercise.unit == "Time (seconds)" %>
+                  <td><%= exercise.convert_time %></td>
+                <% else %>
+                  <td><%= exercise.record %> <%= exercise.unit %></td>
+                <% end %>
+                <td><%= exercise.date %></td>
             <% end %>
-          </div>
+          </table>
         </div>
       <% end %>
     </div>

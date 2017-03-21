@@ -21,10 +21,6 @@ html {
   background-size: cover;
 }
 
-.records {
-  background-color: $md-grey;
-}
-
 .name {
   font-size: 5em;
   color: $color-pop;
@@ -32,4 +28,9 @@ html {
 
 .new_exercise {
   background-color: $color-pop;
+}
+
+.exercise-list {
+  background-color: $color-pop;
+  padding: 40px;
 }
