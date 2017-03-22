@@ -3,25 +3,12 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-6">
-      <%= form_for [@user, @exercise] do |f| %>
-        <h2 class="text-center">Add a New PR</h2>
-        <%= f.label :name %>
-        <%= f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.', class: 'input-light' %>
-        <%= f.label :record %>
-        <%= f.number_field :record, placeholder: 'How much, how fast, how many?', class: 'input-light' %>
-        <%= f.label :unit %>
-        <%= f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps']) %>
-        <%= f.label :date %>
-        <%= f.date_field :date, class: 'input-light' %>
-        <%= f.button 'PR City!', class: "btn-dark" %>
-      <% end %>
-    </div>
-
-    <div class="col-6">
+    <div class="col-2"></div>
+    <div class="col-8">
       <% if @exercises.any? %>
         <div class="exercise-list">
           <h2 class="text-center">Your PRs</h2>
+          <hr>
           <table style="width:100%">
             <tr>
               <th>Exercise</th>
@@ -41,9 +28,22 @@
           </table>
         </div>
       <% end %>
+      <br>
+      <%= form_for [@user, @exercise] do |f| %>
+        <h2 class="text-center">Add a New PR</h2>
+        <hr>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.', class: 'input-light' %>
+        <%= f.label :record %>
+        <%= f.number_field :record, placeholder: 'How much, how fast, how many?', class: 'input-light' %>
+        <%= f.label :unit %>
+        <%= f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps']) %>
+        <%= f.label :date %>
+        <%= f.date_field :date, class: 'input-light' %>
+        <%= f.button 'PR City!', class: "btn-dark" %>
+      <% end %>
     </div>
-    <!--column for prs -->
-    <!--column for new -->
+    <div class="col-2"></div>
     <!--search and history functions-->
   </div>
 </div>

@@ -26,11 +26,15 @@ html {
   color: $color-pop;
 }
 
-.new_exercise {
+.new_exercise, .edit_exercise {
   background-color: $color-pop;
 }
 
 .exercise-list {
   background-color: $color-pop;
   padding: 40px;
+}
+
+hr {
+  margin-bottom: 20px;
 }
