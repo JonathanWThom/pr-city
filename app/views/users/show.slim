@@ -1,0 +1,38 @@
+.container
+  h1.text-center.name =@user.name
+
+.container
+  .row
+    .col-2
+    .col-8
+      - if @exercises.any?
+        .exercise-list
+          h2.text-center Your PRs
+          hr
+          table style="width:100%"
+            tr
+              th Exercise
+              th Record
+              th Date
+              - @exercises.each do |exercise|
+                tr.text-center
+                  td = link_to exercise.name, user_exercise_path(@user, exercise)
+                  - if exercise.unit == "Time (seconds)"
+                    td = exercise.convert_time
+                  - else
+                    td = exercise.record = exercise.unit
+                  td = exercise.date
+      br
+      = form_for [@user, @exercise] do |f|
+        h2.text-center Add a New PR
+        hr
+        = f.label :name
+        = f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.', class: 'input-light'
+        = f.label :record
+        = f.number_field :record, placeholder: 'How much, how fast, how many?', class: 'input-light'
+        = f.label :unit
+        = f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps'])
+        = f.label :date
+        = f.date_field :date, class: 'input-light'
+        = f.button 'PR City!', class: 'btn-dark'
+    .col-2
