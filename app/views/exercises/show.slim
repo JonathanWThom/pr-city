@@ -1,9 +1,9 @@
+button.btn-pop = link_to 'Back', user_path(current_user)
+// make this sit inline
+
 .container
   h1.text-center.name = @exercise.name
-  h2.text-center.white
-    = @exercise.record
-    = ' '
-    = @exercise.unit
+  h2.text-center.white #{@exercise.record} #{@exercise.unit}
 
 .container
   .row
@@ -19,12 +19,8 @@
               th Date
               - @revisions.each do |revision|
                 tr.text-center
-                  td
-                    = revision.record
-                    = ' '
-                    = revision.unit
-                  td
-                    = revision.date
+                  td #{revision.record} #{revision.unit}
+                  td = revision.date
       br
       =form_for [@user, @exercise] do |f|
         h2.text-center Update
