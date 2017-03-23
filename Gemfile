@@ -14,6 +14,7 @@ gem 'decent_exposure', '3.0.0'
 gem 'safe_attributes'
 gem "audited", "~> 4.3"
 gem "rails-observers", github: 'rails/rails-observers'
+gem 'slim-rails'
 
 
 group :development, :test do
