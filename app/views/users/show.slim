@@ -23,16 +23,13 @@
                     td = exercise.record = exercise.unit
                   td = exercise.date
       br
-      = form_for [@user, @exercise] do |f|
+      = simple_form_for [@user, @exercise] do |f|
         h2.text-center Add a New PR
         hr
-        = f.label :name
-        = f.text_field :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.', class: 'input-light'
-        = f.label :record
-        = f.number_field :record, placeholder: 'How much, how fast, how many?', class: 'input-light'
+        = f.input :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.'
+        = f.input :record, as: :integer, placeholder: 'How much, how fast, how many?', input_html: { class: 'input-light' }
         = f.label :unit
         = f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps'])
-        = f.label :date
-        = f.date_field :date, class: 'input-light'
-        = f.button 'PR City!', class: 'btn-dark'
+        = f.input :date, as: :string, input_html: {type: :date, class: 'input-light'}
+        = f.button :button, 'PR City!', class: 'btn-dark'
     .col-2
