@@ -18,15 +18,15 @@
                 tr.text-center
                   td = link_to exercise.name, user_exercise_path(@user, exercise)
                   - if exercise.unit == "Time (seconds)"
-                    td = exercise.convert_time
+                      td = exercise.convert_time
                   - else
-                    td = exercise.record = exercise.unit
+                      td #{exercise.record} #{exercise.unit}
                   td = exercise.date
       br
       = simple_form_for [@user, @exercise] do |f|
         h2.text-center Add a New PR
         hr
-        = f.input :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.'
+        = f.input :name, placeholder: 'Back Squat, 1 Mile Run, Max Reps Pull-ups, etc.', input_html: { class: 'input-light' }
         = f.input :record, as: :integer, placeholder: 'How much, how fast, how many?', input_html: { class: 'input-light' }
         = f.label :unit
         = f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps'])
