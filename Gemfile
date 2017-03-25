@@ -15,6 +15,7 @@ gem 'safe_attributes'
 gem "audited", "~> 4.3"
 gem "rails-observers", github: 'rails/rails-observers'
 gem 'slim-rails'
+gem 'simple_form'
 
 
 group :development, :test do

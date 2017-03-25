@@ -21,6 +21,10 @@ html {
   background-size: cover;
 }
 
+abbr[title="required"] {
+  display: none;
+}
+
 .name {
   font-size: 5em;
   color: $color-pop;

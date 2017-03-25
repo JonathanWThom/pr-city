@@ -22,17 +22,15 @@ button.btn-pop = link_to 'Back', user_path(current_user)
                   td #{revision.record} #{revision.unit}
                   td = revision.date
       br
-      =form_for [@user, @exercise] do |f|
+      = simple_form_for [@user, @exercise] do |f|
         h2.text-center Update
         hr
-        = f.label :name
-        = f.text_field :name, class: 'input-light'
-        = f.label :record
-        = f.number_field :record, class: 'input-light'
+        = f.input :name, input_html: { class: 'input-light' }
+        = f.input :record, as: :integer, input_html: { class: 'input-light' }
         = f.label :unit
         = f.select(:unit,['Pounds', 'Kilos', 'Time (seconds)', 'Reps'])
-        = f.label :date
-        = f.date_field :date, class: "input-light"
-        = f.button "PR City!", class: "btn-dark"
+        = f.input :date, as: :string, input_html: {type: :date, class: 'input-light', value: Time.now.strftime('%Y-%m-%d')}
+        = f.button :button, 'PR City!', class: 'btn-dark'
+    .col-2
 
     .col-2
